@@ -1,0 +1,10 @@
+POST /portfolio/skill/4 HTTP/1.1
+Host: localhost:8080
+Accept: */*
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huZG9lQGV4YW1wbGUub3JnIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE2NTQ5NDI4MDAsImV4cCI6MTY1Njc0MjgwMH0.VaqZTMTA2cCRX4XlGMPxtId3ygIrv0CqCqLzMgoYLer2Rcc7ocoXSaWxunYIEyC_ktXcFd4jwyuwOeyNbjEonQ
+
+###
+DELETE /portfolio/skill/4 HTTP/1.1
+Host: localhost:8080
+Accept: */*
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huZG9lQGV4YW1wbGUub3JnIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9BRE1JTiJdLCJpYXQiOjE2NTQ5NDI4MDAsImV4cCI6MTY1Njc0MjgwMH0.VaqZTMTA2cCRX4XlGMPxtId3ygIrv0CqCqLzMgoYLer2Rcc7ocoXSaWxunYIEyC_ktXcFd4jwyuwOeyNbjEonQ

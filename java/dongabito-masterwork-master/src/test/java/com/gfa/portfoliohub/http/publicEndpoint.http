@@ -1,0 +1,42 @@
+GET /portfolio/1 HTTP/1.1
+Host: localhost:8080
+
+###
+GET /portfolio/skill/4 HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+###
+GET /portfolio/technology/4 HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+###
+GET /skill HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+###
+GET /skill/skillcategory HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+###
+GET /technology HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+###
+GET /technology/keywords HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+###
+GET /roadmap?id=4 HTTP/1.1
+Host: localhost:8080
+Accept: application/json
+
+###
+GET /roadmap HTTP/1.1
+Host: localhost:8080
+Accept: application/json
