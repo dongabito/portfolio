@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="layouts/head.html::head(title='Create')"></div>
+<body>
+<main class="container">
+    <div th:replace="layouts/nav::nav"></div>
+    <form action="#" th:action="@{/recipes/create}" method="post">
+        <div th:if="${recipe!=null}">
+            <label class="form-label">
+                <span>ID</span>
+                <input type="text" class="form-control" name="id" th:value="${recipe.id}" readonly>
+            </label>
+        </div>
+        <div class=" mb-3">
+            <label class="form-label">
+                <span>Name</span>
+                <input type="text" class="form-control" name="name" th:value="${recipe?.name}" required>
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">
+                <span>Description</span>
+                <input type="text" class="form-control" name="description" th:value="${recipe?.description}" required>
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">
+                <span>Steps</span>
+                <textarea type="text" class="form-control" placeholder="Hogyan készül az étel?" name="steps" th:text="${recipe?.getSteps}" rows="4" cols="50" required>
+                </textarea>
+            </label>
+        </div>
+            <h5>Ételallergiák</h5>
+        <div class="form-check mb-3" th:each="allergy : ${allergies}">
+            <label class="form-check-label">
+                <span th:text="${allergy}"></span>
+                <input class="form-check-input" type="checkbox" name="allergies" th:value="${allergy}">
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</main>
+</body>
+</html>

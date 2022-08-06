@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="layouts/head.html::head(title='Create')"></div>
+<body>
+<main class="container">
+    <div th:replace="layouts/nav::nav"></div>
+    <form action="#" th:action="@{/ingredients/create}" method="post">
+        <div th:if="${ingredient!=null}">
+            <label class="form-label">
+                <span>ID</span>
+                <input type="text" class="form-control-plaintext" name="id" th:value="${ingredient.id}"
+                       readonly>
+            </label>
+        </div>
+        <div class=" mb-3">
+            <label class="form-label">
+                <span>Name</span>
+                <input type="text" class="form-control" name="name"
+                       th:value="${ingredient?.name}" required>
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">
+                <span>Unit: </span>
+                <select class="form-select" name="unit">
+                    <option selected>Nyisd le a menüt</option>
+                    <option th:each="unit : ${units}" th:text="${unit}" th:value="${unit}"
+                            th:selected="${unit == ingredient?.unit}"></option>
+                </select>
+            </label>
+        </div>
+        <h5>Elérhető:</h5>
+        <div class="form-check">
+            <label class="form-check-label">
+                <span>Igen</span>
+                <input class="form-check-input" type="radio" name="available" th:value="true"
+                       th:checked="${ingredient?.available}">
+            </label>
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">
+                <span>Nem</span>
+                <input class="form-check-input" type="radio" name="available" th:value="false"
+                       th:checked="${ingredient?.available == false}"
+                       checked>
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary" th:text="${ingredient}?'refresh':'submit'">Submit</button>
+    </form>
+</main>
+</body>
+</html>

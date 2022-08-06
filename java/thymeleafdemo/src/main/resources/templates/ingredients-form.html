@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="layouts/head.html::head(title='Create')"></div>
+<body>
+<main class="container">
+    <div th:replace="layouts/nav::nav"></div>
+    <form action="#" th:action="@{/recipes/ingredients}" method="post">
+        <div>
+            <label class="form-label">
+                <span>ID: </span>
+                <input type="text" class="form-control" name="id" th:value="${recipe.id}"
+                       readonly>
+            </label>
+        </div>
+        <div class=" mb-3">
+            <label class="form-label">
+                <span>Recept: </span>
+                <input type="text" class="form-control" name="name"
+                       th:value="${recipe.name}" readonly>
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">
+                <span>Alapanyag: </span>
+                <select class="form-select" name="ingredientId">
+                    <option selected>Nyisd le a menüt</option>
+                    <option th:each="ingredient : ${ingredients}" th:text="${ingredient.name}"
+                            th:value="${ingredient.id}"></option>
+                </select>
+            </label>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">
+                <span>Mennyiség: </span>
+                <input type="number" step="0.01" class="form-number" min="1" max="50" name="amount">
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary" th:text="submit">Submit</button>
+    </form>
+</main>
+</script>
+</body>
+</html>
