@@ -27,6 +27,7 @@ jobs:
           image: donga/thymeleaf-project
           tags: latest
           registry: docker.io
+          dockerfile: java/thymeleafdemo/Dockerfile
           directory: java/thymeleafdemo/.
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
