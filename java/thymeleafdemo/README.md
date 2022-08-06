@@ -1,10 +1,10 @@
-#Thymeleaf project
+# Thymeleaf project
 
-##Application
+## Application
 
 - Recipe management app with Thymeleaf template engine
 
-##Used technologies
+## Used technologies
 
 - Springboot Starter Web
 - Thymeleaf
@@ -13,7 +13,7 @@
 - Lombok
 - H2
 
-##Backing services
+## Backing services
 
 - DockerHub
 - GitHub Actions
